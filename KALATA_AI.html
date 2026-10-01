@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KALATA AI — E-commerce Manager</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:#f5f7fb;color:#172033}
+.app{display:flex;min-height:100vh}.sidebar{width:245px;background:#111827;color:white;padding:22px 16px;position:fixed;height:100vh}
+.logo{font-size:22px;font-weight:800;margin:5px 10px 28px}.logo span{color:#38bdf8}
+.nav button{width:100%;border:0;background:transparent;color:#cbd5e1;padding:12px 13px;margin:3px 0;text-align:left;border-radius:10px;cursor:pointer;font-size:14px}.nav button:hover,.nav button.active{background:#1e293b;color:#fff}
+.main{margin-left:245px;width:calc(100% - 245px);padding:24px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.top h1{margin:0;font-size:25px}.badge{background:#dcfce7;color:#166534;padding:7px 11px;border-radius:20px;font-size:12px;font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.card{background:white;border:1px solid #e8edf5;border-radius:16px;padding:18px;box-shadow:0 3px 12px #17203308}.label{font-size:13px;color:#64748b}.value{font-size:25px;font-weight:800;margin:8px 0}.up{color:#16a34a;font-size:12px}
+.grid{display:grid;grid-template-columns:1.5fr 1fr;gap:16px;margin-top:16px}.panel{background:white;border:1px solid #e8edf5;border-radius:16px;padding:18px}.panel h2{font-size:17px;margin:0 0 15px}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:12px 8px;border-bottom:1px solid #eef2f7}th{color:#64748b;font-weight:600}.status{padding:5px 8px;border-radius:8px;font-size:11px;font-weight:700}.green{background:#dcfce7;color:#166534}.orange{background:#ffedd5;color:#9a3412}.blue{background:#dbeafe;color:#1d4ed8}
+.ai{background:linear-gradient(135deg,#0f172a,#1e293b);color:white}.ai p{color:#cbd5e1;font-size:13px;line-height:1.5}.prompt{display:flex;gap:8px;margin-top:12px}.prompt input{flex:1;padding:11px;border-radius:9px;border:1px solid #475569;background:#111827;color:white}.btn{border:0;border-radius:9px;padding:10px 14px;background:#0ea5e9;color:white;font-weight:700;cursor:pointer}.btn:hover{opacity:.9}
+.section{display:none}.section.active{display:block}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px}.search{padding:10px;border:1px solid #dbe2ea;border-radius:9px;min-width:230px}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.product{border:1px solid #e5eaf1;border-radius:13px;padding:14px}.product .pic{height:120px;border-radius:10px;background:#eef6ff;display:flex;align-items:center;justify-content:center;font-size:42px}.product h3{font-size:15px;margin:11px 0 5px}.muted{color:#64748b;font-size:12px}
+.chat{height:310px;overflow:auto;background:#0b1220;border-radius:12px;padding:13px}.msg{padding:9px 11px;border-radius:10px;margin:7px 0;max-width:90%;font-size:13px;line-height:1.4}.bot{background:#1e293b}.user{background:#0284c7;margin-left:auto}
+@media(max-width:900px){.sidebar{width:70px}.logo{font-size:0}.logo span{font-size:20px}.nav button{font-size:0;text-align:center}.main{margin-left:70px;width:calc(100% - 70px)}.cards{grid-template-columns:repeat(2,1fr)}.grid,.product-grid{grid-template-columns:1fr}}
+@media(max-width:550px){.main{padding:14px}.cards{grid-template-columns:1fr}.top{align-items:flex-start;gap:10px}.product-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="logo">KALATA <span>AI</span></div>
+  <div class="nav">
+    <button class="active" onclick="show('dashboard',this)">🏠 Tableau de bord</button>
+    <button onclick="show('products',this)">🛍️ Produits</button>
+    <button onclick="show('orders',this)">📦 Commandes</button>
+    <button onclick="show('customers',this)">👥 Clients</button>
+    <button onclick="show('marketing',this)">📣 Marketing</button>
+    <button onclick="show('assistant',this)">🤖 Assistant IA</button>
+    <button onclick="show('settings',this)">⚙️ Paramètres</button>
+  </div>
+</aside>
+
+<main class="main">
+<section id="dashboard" class="section active">
+<div class="top"><h1>Bonjour 👋 — KALATA AI</h1><span class="badge">● IA active</span></div>
+<div class="cards">
+<div class="card"><div class="label">Chiffre d'affaires</div><div class="value">486 500 FCFA</div><div class="up">▲ 18,4% ce mois</div></div>
+<div class="card"><div class="label">Bénéfice estimé</div><div class="value">142 800 FCFA</div><div class="up">▲ 12,1%</div></div>
+<div class="card"><div class="label">Commandes</div><div class="value">37</div><div class="up">▲ 8 nouvelles</div></div>
+<div class="card"><div class="label">Clients</div><div class="value">31</div><div class="up">▲ 5 nouveaux</div></div>
+</div>
+<div class="grid">
+<div class="panel"><h2>Dernières commandes</h2><table><thead><tr><th>Commande</th><th>Client</th><th>Total</th><th>Statut</th></tr></thead><tbody>
+<tr><td>#KL-1037</td><td>Client WhatsApp</td><td>15 000 F</td><td><span class="status orange">À traiter</span></td></tr>
+<tr><td>#KL-1036</td><td>Aminata K.</td><td>22 500 F</td><td><span class="status blue">Expédition</span></td></tr>
+<tr><td>#KL-1035</td><td>Yao M.</td><td>12 000 F</td><td><span class="status green">Livrée</span></td></tr>
+<tr><td>#KL-1034</td><td>Fatou D.</td><td>18 500 F</td><td><span class="status green">Livrée</span></td></tr>
+</tbody></table></div>
+<div class="panel ai"><h2>🤖 Copilote KALATA</h2><p>Analyse rapide : ton accessoire le plus performant est le support téléphone. Je peux créer une publication ou analyser tes marges.</p><button class="btn" onclick="show('assistant',document.querySelectorAll('.nav button')[5])">Ouvrir l'assistant</button></div>
+</div>
+</section>
+
+<section id="products" class="section">
+<div class="top"><h1>🛍️ Produits</h1><button class="btn" onclick="addProduct()">+ Ajouter</button></div>
+<div class="actions"><input class="search" oninput="filterProducts(this.value)" placeholder="Rechercher un produit..."></div>
+<div class="product-grid" id="productsGrid">
+<div class="product"><div class="pic">📱</div><h3>Support téléphone magnétique</h3><div class="muted">Coût: 3 500 F · Vente: 7 500 F</div><p><span class="status green">Stock 24</span></p></div>
+<div class="product"><div class="pic">🔌</div><h3>Câble USB-C rapide</h3><div class="muted">Coût: 2 000 F · Vente: 5 000 F</div><p><span class="status orange">Stock 6</span></p></div>
+<div class="product"><div class="pic">🎧</div><h3>Écouteurs Bluetooth</h3><div class="muted">Coût: 5 500 F · Vente: 12 000 F</div><p><span class="status green">Stock 18</span></p></div>
+</div>
+</section>
+
+<section id="orders" class="section">
+<div class="top"><h1>📦 Commandes</h1><span class="badge">37 commandes</span></div>
+<div class="panel"><table><thead><tr><th>ID</th><th>Client</th><th>Produit</th><th>Total</th><th>Statut</th></tr></thead><tbody>
+<tr><td>#KL-1037</td><td>Client WhatsApp</td><td>Support téléphone</td><td>15 000 F</td><td><span class="status orange">À traiter</span></td></tr>
+<tr><td>#KL-1036</td><td>Aminata K.</td><td>Écouteurs Bluetooth</td><td>22 500 F</td><td><span class="status blue">Expédition</span></td></tr>
+<tr><td>#KL-1035</td><td>Yao M.</td><td>Câble USB-C</td><td>12 000 F</td><td><span class="status green">Livrée</span></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="customers" class="section">
+<div class="top"><h1>👥 Clients</h1></div>
+<div class="panel"><table><thead><tr><th>Client</th><th>Canal</th><th>Commandes</th><th>Dépenses</th></tr></thead><tbody>
+<tr><td>Aminata K.</td><td>WhatsApp</td><td>4</td><td>68 000 F</td></tr><tr><td>Yao M.</td><td>Facebook</td><td>3</td><td>35 500 F</td></tr><tr><td>Fatou D.</td><td>TikTok</td><td>2</td><td>29 000 F</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="marketing" class="section">
+<div class="top"><h1>📣 Marketing IA</h1></div>
+<div class="grid"><div class="panel"><h2>Générateur de publication</h2><input id="marketProduct" class="search" value="Support téléphone magnétique"><br><br><button class="btn" onclick="generatePost()">Générer</button><div id="post" style="margin-top:15px;line-height:1.6"></div></div>
+<div class="panel"><h2>Idées de contenu</h2><p>🎬 Démonstration produit en 15 secondes</p><p>📱 « 3 erreurs qui abîment ton téléphone »</p><p>💬 Témoignage client + offre limitée</p></div></div>
+</section>
+
+<section id="assistant" class="section">
+<div class="top"><h1>🤖 Assistant IA KALATA</h1></div>
+<div class="panel">
+<div class="chat" id="chat"><div class="msg bot">Bonjour ! Je suis le copilote KALATA. Demande-moi par exemple : « donne-moi le prix de vente avec 40% de marge » ou « crée une publicité pour mon produit ».</div></div>
+<div class="prompt"><input id="aiInput" placeholder="Écris ta demande..." onkeydown="if(event.key==='Enter')askAI()"><button class="btn" onclick="askAI()">Envoyer</button></div>
+</div>
+</section>
+
+<section id="settings" class="section">
+<div class="top"><h1>⚙️ Paramètres</h1></div>
+<div class="panel"><h2>Boutique</h2><p>Nom : <b>KALATA SHOP</b></p><p>Pays : Côte d’Ivoire</p><p>Devise : FCFA</p><hr><h2>Automatisations</h2><p>✅ Alertes de stock</p><p>✅ Génération de contenu</p><p>🟡 Réponses clients automatiques — à connecter</p><p>🟡 Synchronisation commandes — à connecter</p></div>
+</section>
+</main></div>
+
+<script>
+function show(id,btn){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active')}
+function filterProducts(q){document.querySelectorAll('.product').forEach(p=>p.style.display=p.innerText.toLowerCase().includes(q.toLowerCase())?'block':'none')}
+function addProduct(){let n=prompt('Nom du produit :');if(!n)return;let price=prompt('Prix de vente (FCFA) :','7500');let d=document.createElement('div');d.className='product';d.innerHTML=`<div class="pic">🛍️</div><h3>${n}</h3><div class="muted">Vente: ${price} F</div><p><span class="status green">Nouveau</span></p>`;document.getElementById('productsGrid').appendChild(d)}
+function generatePost(){let p=document.getElementById('marketProduct').value;document.getElementById('post').innerHTML=`<b>📱 ${p} — simplifie ton quotidien !</b><br><br>Marre des accessoires compliqués ? Découvre ${p}, pratique, simple et idéal pour ton téléphone. 🔥<br><br>🚚 Livraison disponible en Côte d’Ivoire<br>💬 Commande par WhatsApp<br><br>#KalataShop #AccessoiresTelephone #CotedIvoire #TikTokShop`}
+function askAI(){let i=document.getElementById('aiInput'),q=i.value.trim();if(!q)return;let c=document.getElementById('chat');c.innerHTML+=`<div class="msg user">${q.replace(/</g,'&lt;')}</div>`;let a='';let l=q.toLowerCase();if(l.includes('marge'))a='Pour calculer ton prix : Prix de vente = coût ÷ (1 - marge). Exemple : coût 3 500 F avec 40% de marge → environ 5 833 F.';else if(l.includes('public')||l.includes('tiktok'))a='Je peux préparer : accroche + script 15 secondes + texte à l’écran + appel à l’action WhatsApp.';else if(l.includes('stock'))a='Je te conseille une alerte lorsque le stock passe sous 10 unités. Les produits à 6 unités doivent être surveillés.';else a='Je peux t’aider avec les produits, prix, marges, commandes, stock et marketing. Essaie : « analyse mes produits » ou « crée une publicité TikTok ». ';c.innerHTML+=`<div class="msg bot">${a}</div>`;c.scrollTop=c.scrollHeight;i.value=''}
+</script>
+</body>
+</html>
