@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KALATA SHOP — Produits malins au quotidien</title>
+<meta name="description" content="KALATA SHOP — accessoires téléphone, gadgets et produits pratiques. Commandez facilement en Côte d'Ivoire.">
+<style>
+:root{--green:#18a558;--dark:#111827;--muted:#6b7280;--light:#f6f7f9;--white:#fff;--red:#e63946}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--dark);background:#fff}
+a{text-decoration:none;color:inherit}.top{background:var(--dark);color:#fff;text-align:center;padding:9px;font-size:13px}
+header{position:sticky;top:0;background:#fff;z-index:10;border-bottom:1px solid #eee}
+.nav{max-width:1150px;margin:auto;padding:14px 18px;display:flex;align-items:center;gap:24px}
+.logo{font-weight:900;font-size:23px;color:var(--green)}.navlinks{display:flex;gap:20px;flex:1}.navlinks a:hover{color:var(--green)}
+.search{border:1px solid #ddd;border-radius:10px;padding:10px;width:180px}.cart{font-weight:700}
+.hero{background:linear-gradient(135deg,#eaf9f0,#f8fafc);padding:65px 18px}.hero-inner{max-width:1150px;margin:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+.badge{display:inline-block;background:#d9f7e5;color:#087a3b;padding:8px 12px;border-radius:30px;font-weight:700;font-size:13px}
+h1{font-size:clamp(36px,5vw,62px);line-height:1.02;margin:16px 0}.hero p{font-size:18px;color:var(--muted);line-height:1.6}
+.btn{display:inline-block;background:var(--green);color:#fff;padding:14px 20px;border-radius:10px;font-weight:800;border:0;cursor:pointer}.btn.alt{background:#fff;color:var(--dark);border:1px solid #ddd;margin-left:8px}
+.hero-card{background:#fff;border-radius:24px;padding:25px;box-shadow:0 18px 50px #00000012;text-align:center}.hero-card .product-img{height:250px}
+.product-img{display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#f1f5f9,#e2e8f0);border-radius:16px;font-size:72px}
+section{padding:55px 18px}.wrap{max-width:1150px;margin:auto}.section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}.section-title h2{font-size:30px;margin:0}.muted{color:var(--muted)}
+.features{background:#fff}.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.feature{padding:22px;border:1px solid #eee;border-radius:14px;text-align:center}.feature b{display:block;margin:8px 0}
+.categories{background:var(--light)}.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.cat{background:#fff;border-radius:16px;padding:28px;text-align:center;font-weight:800;font-size:17px}.cat span{font-size:45px;display:block;margin-bottom:12px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{border:1px solid #eee;border-radius:16px;overflow:hidden;background:#fff}.card .product-img{height:190px;border-radius:0}.card-body{padding:16px}.card h3{margin:0 0 8px;font-size:17px}.price{font-size:21px;font-weight:900}.old{text-decoration:line-through;color:#9ca3af;margin-right:7px;font-size:14px}.stars{color:#f59e0b;margin:8px 0}.card .btn{width:100%;margin-top:10px}
+.promo{background:var(--dark);color:#fff}.promo-inner{display:flex;justify-content:space-between;align-items:center;gap:25px}.promo h2{font-size:34px;margin:0 0 8px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.step{padding:25px;border-radius:15px;background:var(--light)}.num{font-size:28px;font-weight:900;color:var(--green)}
+.reviews{background:var(--light)}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review{background:#fff;padding:22px;border-radius:15px}.review .stars{font-size:18px}
+.whatsapp{background:#eaf9f0;text-align:center}.whatsapp h2{font-size:32px}
+footer{background:#111827;color:#d1d5db;padding:45px 18px}.footer-grid{max-width:1150px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:25px}.footer-title{color:#fff;font-weight:900;margin-bottom:13px}.copy{text-align:center;border-top:1px solid #374151;margin-top:30px;padding-top:20px;font-size:13px}
+.cart-count{background:var(--red);color:#fff;border-radius:20px;padding:2px 7px;font-size:12px}
+.toast{position:fixed;bottom:20px;right:20px;background:#111827;color:#fff;padding:14px 18px;border-radius:10px;display:none;z-index:20}
+@media(max-width:800px){.navlinks{display:none}.search{width:130px}.hero-inner{grid-template-columns:1fr}.feature-grid,.cat-grid,.products{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.review-grid,.footer-grid{grid-template-columns:1fr 1fr}.promo-inner{display:block}.promo .btn{margin-top:18px}}
+@media(max-width:500px){.nav{gap:9px}.logo{font-size:19px}.search{display:none}.hero{padding:45px 16px}.hero-card .product-img{height:190px}.feature-grid,.cat-grid,.products,.steps,.review-grid,.footer-grid{grid-template-columns:1fr}.btn.alt{margin:8px 0 0 0}.section-title h2{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="top">🚚 Livraison partout en Côte d'Ivoire • 📱 Commande WhatsApp</div>
+
+<header>
+<nav class="nav">
+  <a class="logo" href="#">KALATA SHOP</a>
+  <div class="navlinks"><a href="#boutique">Boutique</a><a href="#categories">Catégories</a><a href="#promotions">Promotions</a><a href="#comment">Comment commander ?</a></div>
+  <input class="search" id="search" placeholder="🔍 Rechercher">
+  <div class="cart">🛒 <span class="cart-count" id="count">0</span></div>
+</nav>
+</header>
+
+<main>
+<section class="hero">
+<div class="hero-inner">
+<div>
+<span class="badge">🔥 OFFRE DE LANCEMENT</span>
+<h1>Des produits malins pour votre quotidien.</h1>
+<p>Découvrez des accessoires et gadgets pratiques à prix accessibles. Commandez simplement et faites-vous livrer en Côte d'Ivoire.</p>
+<a class="btn" href="#boutique">ACHETER MAINTENANT</a>
+<a class="btn alt" href="#promotions">VOIR LES PROMOTIONS</a>
+</div>
+<div class="hero-card">
+<div class="product-img">📱</div>
+<h2>Support téléphone multifonction</h2>
+<p class="muted">Pratique • Compact • Facile à utiliser</p>
+<div><span class="old">10 000 FCFA</span><strong class="price">7 990 FCFA</strong></div>
+<br><button class="btn" onclick="addToCart('Support téléphone multifonction',7990)">COMMANDER</button>
+</div>
+</div>
+</section>
+
+<section class="features"><div class="wrap"><div class="feature-grid">
+<div class="feature">🚚<b>Livraison</b><span class="muted">Partout en Côte d'Ivoire</span></div>
+<div class="feature">💳<b>Paiement</b><span class="muted">Solutions pratiques</span></div>
+<div class="feature">🔒<b>Commande sécurisée</b><span class="muted">Vos données protégées</span></div>
+<div class="feature">💬<b>Assistance</b><span class="muted">Disponible sur WhatsApp</span></div>
+</div></div></section>
+
+<section class="categories" id="categories"><div class="wrap">
+<div class="section-title"><h2>Nos catégories</h2></div>
+<div class="cat-grid">
+<div class="cat">📱<span>📱</span>Accessoires téléphone</div>
+<div class="cat">🏠<span>🏠</span>Maison & cuisine</div>
+<div class="cat">🚗<span>🚗</span>Auto & moto</div>
+<div class="cat">💡<span>💡</span>Gadgets électroniques</div>
+</div></div></section>
+
+<section id="boutique"><div class="wrap">
+<div class="section-title"><div><h2>Nos meilleures ventes</h2><p class="muted">Des produits sélectionnés pour leur utilité.</p></div></div>
+<div class="products" id="products">
+<div class="card" data-name="support téléphone multifonction"><div class="product-img">📱</div><div class="card-body"><h3>Support téléphone multifonction</h3><div class="stars">★★★★★</div><span class="old">10 000</span><span class="price">7 990 FCFA</span><button class="btn" onclick="addToCart('Support téléphone multifonction',7990)">Ajouter au panier</button></div></div>
+<div class="card" data-name="câble charge rapide"><div class="product-img">🔌</div><div class="card-body"><h3>Câble de charge rapide</h3><div class="stars">★★★★★</div><span class="price">4 990 FCFA</span><button class="btn" onclick="addToCart('Câble de charge rapide',4990)">Ajouter au panier</button></div></div>
+<div class="card" data-name="écouteurs bluetooth"><div class="product-img">🎧</div><div class="card-body"><h3>Écouteurs Bluetooth</h3><div class="stars">★★★★★</div><span class="price">9 990 FCFA</span><button class="btn" onclick="addToCart('Écouteurs Bluetooth',9990)">Ajouter au panier</button></div></div>
+<div class="card" data-name="support téléphone voiture"><div class="product-img">🚗</div><div class="card-body"><h3>Support téléphone voiture</h3><div class="stars">★★★★★</div><span class="price">6 990 FCFA</span><button class="btn" onclick="addToCart('Support téléphone voiture',6990)">Ajouter au panier</button></div></div>
+</div></div></section>
+
+<section class="promo" id="promotions"><div class="wrap promo-inner"><div><h2>🔥 Promotions de la semaine</h2><p>Profitez de réductions sur une sélection de produits.</p></div><a class="btn" href="#boutique">PROFITER DES OFFRES</a></div></section>
+
+<section class="reviews"><div class="wrap"><div class="section-title"><h2>Avis clients</h2></div><div class="review-grid">
+<div class="review"><div class="stars">★★★★★</div><b>Client vérifié</b><p>« Très bon produit, conforme à la description. »</p></div>
+<div class="review"><div class="stars">★★★★★</div><b>Client vérifié</b><p>« Commande facile et produit pratique. »</p></div>
+<div class="review"><div class="stars">★★★★★</div><b>Client vérifié</b><p>« Très satisfait de mon achat. »</p></div>
+</div></div></section>
+
+<section id="comment"><div class="wrap"><div class="section-title"><div><h2>Comment commander ?</h2><p class="muted">4 étapes simples.</p></div></div><div class="steps">
+<div class="step"><div class="num">01</div><h3>Choisissez</h3><p>Choisissez votre produit.</p></div>
+<div class="step"><div class="num">02</div><h3>Commandez</h3><p>Ajoutez-le au panier.</p></div>
+<div class="step"><div class="num">03</div><h3>Confirmation</h3><p>Nous vous contactons pour confirmer.</p></div>
+<div class="step"><div class="num">04</div><h3>Livraison</h3><p>Recevez votre commande.</p></div>
+</div></div></section>
+
+<section class="whatsapp"><div class="wrap"><h2>Une question avant de commander ?</h2><p>Notre équipe peut vous aider directement sur WhatsApp.</p><a class="btn" id="wa" href="#" target="_blank">💬 PARLER SUR WHATSAPP</a></div></section>
+</main>
+
+<footer><div class="footer-grid">
+<div><div class="footer-title">KALATA SHOP</div><p>Les produits malins qui simplifient votre quotidien.</p></div>
+<div><div class="footer-title">Boutique</div><p>Nouveautés<br>Meilleures ventes<br>Promotions</p></div>
+<div><div class="footer-title">Aide</div><p>Comment commander ?<br>Livraison<br>FAQ</p></div>
+<div><div class="footer-title">Contact</div><p>WhatsApp<br>Téléphone<br>Côte d'Ivoire</p></div>
+</div><div class="copy">© 2026 KALATA SHOP — Tous droits réservés</div></footer>
+<div class="toast" id="toast">Produit ajouté au panier ✅</div>
+
+<script>
+let cart=JSON.parse(localStorage.getItem('kalataCart')||'[]');
+function refresh(){document.getElementById('count').textContent=cart.reduce((s,x)=>s+x.qty,0);localStorage.setItem('kalataCart',JSON.stringify(cart))}
+function addToCart(name,price){let x=cart.find(p=>p.name===name);if(x)x.qty++;else cart.push({name,price,qty:1});refresh();let t=document.getElementById('toast');t.style.display='block';setTimeout(()=>t.style.display='none',1800)}
+refresh();
+document.getElementById('search').addEventListener('input',e=>{let q=e.target.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.dataset.name.includes(q)?'block':'none')});
+const phone='2250000000000'; // REMPLACE par ton numéro WhatsApp au format international, sans +
+document.getElementById('wa').href='https://wa.me/'+phone+'?text='+encodeURIComponent('Bonjour KALATA SHOP 👋 Je souhaite avoir des informations sur vos produits.');
+</script>
+</body>
+</html>
