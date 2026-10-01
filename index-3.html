@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KALATA AI — Boutique</title>
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--ink:#14213d;--mut:#5b6785;--line:#e1e6f0;--brand:#0ea5e9;--nav:#0f1b36;--ok:#15803d;--warn:#b45309;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1220;--card:#131d33;--ink:#e8edf8;--mut:#9aa7c4;--line:#24304d;--nav:#0a1020;--ok:#4ade80;--warn:#fbbf24}}
+:root[data-theme="dark"]{--bg:#0b1220;--card:#131d33;--ink:#e8edf8;--mut:#9aa7c4;--line:#24304d;--nav:#0a1020;--ok:#4ade80;--warn:#fbbf24}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.45}
+header{background:var(--nav);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:20px}.logo b{color:var(--brand)}
+nav{display:flex;gap:6px}
+nav button{background:transparent;color:#cbd5ea;border:1px solid #2b3a5e;border-radius:8px;padding:8px 14px;font:inherit;cursor:pointer}
+nav button.on{background:var(--brand);color:#04202e;border-color:var(--brand);font-weight:700}
+main{max-width:1000px;margin:0 auto;padding:16px}
+h2{margin:4px 0 12px;font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.p{display:flex;flex-direction:column;gap:6px}
+.p .em{font-size:38px}
+.price{font-weight:700}
+button.pri{background:var(--brand);color:#04202e;border:0;border-radius:8px;padding:10px 14px;font:inherit;font-weight:700;cursor:pointer}
+button.sec{background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 12px;font:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+input,select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 10px;width:100%}
+label{display:block;font-size:13px;color:var(--mut);margin:8px 0 3px}
+.cart{margin-top:16px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}
+.stats .n{font-size:22px;font-weight:800}.stats span{color:var(--mut);font-size:13px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.scroll{overflow-x:auto}
+.tag{padding:2px 8px;border-radius:99px;font-size:12px;border:1px solid var(--line)}
+.empty{color:var(--mut);padding:10px 0}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">KALATA <b>AI</b></div>
+  <nav><button id="t-shop" class="on">Boutique</button><button id="t-admin">Gestion</button></nav>
+</header>
+<main>
+<section id="shop">
+  <h2>Nos produits</h2>
+  <div class="grid" id="products"></div>
+  <div class="card cart">
+    <h2>Mon panier</h2>
+    <div id="cart"></div>
+    <label for="cname">Votre nom</label><input id="cname" placeholder="Ex. Aminata K.">
+    <label for="cphone">Votre téléphone</label><input id="cphone" inputmode="tel" placeholder="Ex. 07 00 00 00 00">
+    <p><button class="pri" id="order">Commander sur WhatsApp</button></p>
+    <div id="msg" class="empty" role="status"></div>
+  </div>
+</section>
+
+<section id="admin" hidden>
+  <h2>Tableau de bord</h2>
+  <div class="stats" id="stats"></div>
+  <div class="two">
+    <div class="card">
+      <h2>Ajouter un produit</h2>
+      <label for="pn">Nom</label><input id="pn">
+      <label for="pp">Prix (FCFA)</label><input id="pp" type="number" inputmode="numeric" min="0">
+      <label for="pc">Coût d'achat (FCFA)</label><input id="pc" type="number" inputmode="numeric" min="0">
+      <label for="pe">Emoji</label><input id="pe" maxlength="2" value="🛍️">
+      <p><button class="pri" id="addp">Ajouter le produit</button></p>
+    </div>
+    <div class="card">
+      <h2>Réglages</h2>
+      <label for="wa">Numéro WhatsApp de la boutique (avec indicatif, sans +)</label>
+      <input id="wa" inputmode="tel" placeholder="Ex. 22507000000">
+      <p><button class="pri" id="savewa">Enregistrer</button></p>
+      <div id="wamsg" class="empty" role="status"></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:12px">
+    <h2>Commandes</h2>
+    <div class="scroll" id="orders"></div>
+  </div>
+  <div class="card" style="margin-top:12px">
+    <h2>Produits</h2>
+    <div id="plist"></div>
+  </div>
+</section>
+</main>
+<script>
+(function(){
+var K='kalata-v2',S;
+var seed={wa:'',products:[
+{id:1,n:'Support téléphone voiture',p:5000,c:2000,e:'📱'},
+{id:2,n:'Écouteurs Bluetooth sans fil',p:12000,c:6000,e:'🎧'},
+{id:3,n:'Chargeur rapide USB-C',p:6500,c:3000,e:'🔌'},
+{id:4,n:'Câble USB-C renforcé',p:2500,c:800,e:'🔗'},
+{id:5,n:'Coque de protection',p:3000,c:1000,e:'🛡️'},
+{id:6,n:'Verre trempé (écran)',p:2000,c:500,e:'🔲'},
+{id:7,n:'Batterie externe 10 000 mAh',p:12000,c:6500,e:'🔋'},
+{id:8,n:'Montre connectée',p:15000,c:8000,e:'⌚'},
+{id:9,n:'Perche à selfie / trépied',p:5000,c:2200,e:'📸'},
+{id:10,n:'Bague support téléphone',p:1500,c:400,e:'💍'}],orders:[],next:1001};
+try{S=JSON.parse(localStorage.getItem(K))}catch(e){S=null}
+if(!S||!S.products)S=seed;if(!S.wa)S.wa='2250574147375';
+var cart={};
+function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
+function $(i){return document.getElementById(i)}
+function f(n){return Number(n).toLocaleString('fr-FR')+' F'}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function show(w){$('shop').hidden=w!=='shop';$('admin').hidden=w!=='admin';
+$('t-shop').className=w==='shop'?'on':'';$('t-admin').className=w==='admin'?'on':'';if(w==='admin')renderAdmin()}
+$('t-shop').onclick=function(){show('shop')};$('t-admin').onclick=function(){show('admin')};
+
+function renderShop(){
+$('products').innerHTML=S.products.map(function(x){return '<div class="card p"><div class="em">'+esc(x.e)+'</div><div>'+esc(x.n)+'</div><div class="price">'+f(x.p)+'</div><button class="pri" data-add="'+x.id+'">Ajouter au panier</button></div>'}).join('')||'<div class="empty">Aucun produit pour le moment.</div>';
+var ids=Object.keys(cart),t=0;
+$('cart').innerHTML=ids.length?ids.map(function(id){var x=S.products.filter(function(p){return p.id==id})[0];if(!x)return'';t+=x.p*cart[id];
+return '<div class="row"><span>'+esc(x.n)+' × '+cart[id]+'</span><span>'+f(x.p*cart[id])+' <button class="sec" data-rm="'+id+'" aria-label="Retirer">−</button></span></div>'}).join('')+'<div class="row"><b>Total</b><b>'+f(t)+'</b></div>':'<div class="empty">Votre panier est vide. Ajoutez un produit pour commencer.</div>';
+}
+$('products').onclick=function(e){var id=e.target.getAttribute('data-add');if(id){cart[id]=(cart[id]||0)+1;renderShop()}};
+$('cart').onclick=function(e){var id=e.target.getAttribute('data-rm');if(id){cart[id]--;if(cart[id]<=0)delete cart[id];renderShop()}};
+$('order').onclick=function(){
+var ids=Object.keys(cart),nm=$('cname').value.trim(),ph=$('cphone').value.trim();
+if(!ids.length){$('msg').textContent='Ajoutez au moins un produit au panier.';return}
+if(!nm||!ph){$('msg').textContent='Indiquez votre nom et votre téléphone pour commander.';return}
+var items=[],t=0;ids.forEach(function(id){var x=S.products.filter(function(p){return p.id==id})[0];if(x){items.push({n:x.n,q:cart[id],p:x.p,c:x.c});t+=x.p*cart[id]}});
+var o={id:'#KL-'+S.next++,client:nm,phone:ph,items:items,total:t,status:'À traiter',date:new Date().toISOString()};
+S.orders.unshift(o);save();
+var txt='Bonjour, je commande :\n'+items.map(function(i){return '- '+i.n+' × '+i.q}).join('\n')+'\nTotal : '+f(t)+'\nNom : '+nm+'\nTél : '+ph+'\nRéf : '+o.id;
+cart={};renderShop();
+if(S.wa){$('msg').textContent='Commande '+o.id+' enregistrée. Ouverture de WhatsApp…';window.open('https://wa.me/'+S.wa+'?text='+encodeURIComponent(txt),'_blank')}
+else $('msg').textContent='Commande '+o.id+' enregistrée. Le vendeur vous contactera.';
+};
+
+function renderAdmin(){
+var ca=0,ben=0;S.orders.forEach(function(o){ca+=o.total;o.items.forEach(function(i){ben+=(i.p-i.c)*i.q})});
+var nw=S.orders.filter(function(o){return o.status==='À traiter'}).length;
+$('stats').innerHTML=[['Chiffre d\'affaires',f(ca)],['Bénéfice estimé',f(ben)],['Commandes',S.orders.length+' ('+nw+' à traiter)'],['Produits',S.products.length]].map(function(a){return '<div class="card"><span>'+a[0]+'</span><div class="n">'+a[1]+'</div></div>'}).join('');
+$('wa').value=S.wa;
+$('orders').innerHTML=S.orders.length?'<table style="width:100%;border-collapse:collapse"><tbody>'+S.orders.map(function(o,i){return '<tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 6px">'+esc(o.id)+'</td><td>'+esc(o.client)+'<br><small>'+esc(o.phone)+'</small></td><td>'+f(o.total)+'</td><td><select data-st="'+i+'" aria-label="Statut">'+['À traiter','Expédition','Livrée','Annulée'].map(function(s){return '<option'+(s===o.status?' selected':'')+'>'+s+'</option>'}).join('')+'</select></td></tr>'}).join('')+'</tbody></table>':'<div class="empty">Aucune commande. Elles apparaîtront ici dès qu\'un client commande.</div>';
+$('plist').innerHTML=S.products.map(function(x){return '<div class="row"><span>'+esc(x.e)+' '+esc(x.n)+' — '+f(x.p)+'</span><button class="sec" data-del="'+x.id+'">Supprimer</button></div>'}).join('')||'<div class="empty">Aucun produit. Ajoutez le premier ci-dessus.</div>';
+}
+$('orders').onchange=function(e){var i=e.target.getAttribute('data-st');if(i!==null){S.orders[i].status=e.target.value;save();renderAdmin()}};
+$('plist').onclick=function(e){var id=e.target.getAttribute('data-del');if(id){S.products=S.products.filter(function(p){return p.id!=id});save();renderAdmin();renderShop()}};
+$('addp').onclick=function(){var n=$('pn').value.trim(),p=Number($('pp').value),c=Number($('pc').value)||0;if(!n||!p)return;
+S.products.push({id:Date.now(),n:n,p:p,c:c,e:$('pe').value||'🛍️'});save();$('pn').value='';$('pp').value='';$('pc').value='';renderAdmin();renderShop()};
+$('savewa').onclick=function(){S.wa=$('wa').value.replace(/\D/g,'');save();$('wamsg').textContent=S.wa?'Numéro enregistré. Les commandes ouvriront WhatsApp.':'Numéro effacé.'};
+renderShop();
+})();
+</script>
+</body>
+</html>
