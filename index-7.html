@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KALATA SHOP – Accessoires & gadgets, livraison en Côte d'Ivoire</title>
+<meta name="description" content="Accessoires téléphone, maison, auto et gadgets. Commande rapide sur WhatsApp, livraison en Côte d'Ivoire.">
+<style>
+:root{--g:#16a34a;--gd:#0f7a37;--bg:#f6f7f9;--t:#111827;--m:#6b7280;--r:#dc2626;--c:#fff;--b:#e5e7eb;--t1:#e8f5ec;--t2:#d3ecdb}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1115;--t:#f3f4f6;--m:#9ca3af;--c:#1a1d23;--b:#2a2e36;--t1:#1f2a24;--t2:#26362c}}
+*{box-sizing:border-box}body{margin:0;font:15px/1.4 system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--t)}
+header{position:sticky;top:0;z-index:10;background:var(--c);border-bottom:1px solid var(--b)}
+.w{max-width:1100px;margin:0 auto;padding:0 14px}
+.bar{display:flex;align-items:center;gap:12px;height:56px}
+.logo{font-weight:800;color:var(--g);font-size:18px;text-decoration:none}
+nav{display:flex;gap:14px;font-size:13px}nav a{color:var(--t);text-decoration:none}
+.sp{flex:1}
+input{font:inherit;padding:8px 10px;border:1px solid var(--b);border-radius:8px;background:var(--bg);color:var(--t);width:100%}
+#q{max-width:200px}
+.cartb{position:relative;background:none;border:0;font-size:22px;cursor:pointer;color:var(--t)}
+#n{position:absolute;top:-4px;right:-8px;background:var(--r);color:#fff;border-radius:10px;font-size:11px;padding:1px 6px}
+.ship{background:var(--c);border-bottom:1px solid var(--b);padding:8px 0;font-size:13px}
+.pb{height:6px;background:var(--b);border-radius:3px;margin-top:5px;overflow:hidden}.pb i{display:block;height:100%;background:var(--g);width:0;transition:width .3s}
+h2{margin:26px 0 4px;font-size:22px}.sub{color:var(--m);font-size:13px;margin:0 0 14px}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:16px}
+.cat{background:var(--c);border:2px solid transparent;border-radius:12px;padding:14px 8px;text-align:center;font-weight:600;font-size:13px;cursor:pointer;color:var(--t)}
+.cat span{display:block;font-size:30px}.cat.on{border-color:var(--g)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.card{background:var(--c);border:1px solid var(--b);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.img{height:150px;display:grid;place-items:center;font-size:62px;background:linear-gradient(var(--t1),var(--t2));overflow:hidden}
+.img img{width:100%;height:100%;object-fit:cover}
+.c1 .img{background:linear-gradient(#fff3e0,#ffe2b8)}.c2 .img{background:linear-gradient(#e3f0ff,#c9e0fb)}.c3 .img{background:linear-gradient(#fff8d6,#fdeb9a)}
+@media(prefers-color-scheme:dark){.c1 .img{background:linear-gradient(#3a2e1c,#4a3a22)}.c2 .img{background:linear-gradient(#1c2a3d,#233651)}.c3 .img{background:linear-gradient(#3a3519,#4a441f)}}
+.card{transition:box-shadow .15s}.card:hover{box-shadow:0 6px 18px #0002}
+.in .pr{margin-top:auto}
+.hero{background:linear-gradient(135deg,#0f7a37,#16a34a 60%,#4ade80);color:#fff;padding:34px 0 30px}
+.hero h1{margin:0 0 8px;font-size:clamp(24px,5vw,38px);line-height:1.15;max-width:640px}
+.hero p{margin:0 0 18px;max-width:520px;opacity:.95;font-size:16px}
+.hb{display:flex;gap:10px;flex-wrap:wrap}
+.hb a{padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none;font-size:14px}
+.b1{background:#fff;color:#0f7a37}.b2{border:2px solid #fff;color:#fff}
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:-18px;position:relative}
+.trust div{background:var(--c);border:1px solid var(--b);border-radius:12px;padding:12px;font-size:13px;display:flex;gap:10px;align-items:center;box-shadow:0 4px 12px #0001}
+.trust span{font-size:24px}
+.logo{letter-spacing:.3px}
+.tag{position:absolute;top:8px;left:8px;background:var(--r);color:#fff;font-size:12px;font-weight:700;padding:2px 7px;border-radius:6px}
+.in{padding:10px 12px 12px;display:flex;flex-direction:column;gap:6px;flex:1}
+.nm{font-weight:600;font-size:13px;min-height:34px}
+.pr{font-weight:800;font-size:17px}.old{color:var(--m);text-decoration:line-through;font-size:13px;font-weight:400;margin-left:6px}
+button.add,button.go{background:var(--g);color:#fff;border:0;border-radius:8px;padding:10px;font:600 13px inherit;cursor:pointer}
+button.add:hover,button.go:hover{background:var(--gd)}
+button.wa{background:none;border:1px solid var(--g);color:var(--g);border-radius:8px;padding:8px;font:600 12px inherit;cursor:pointer}
+.packs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.pack{background:var(--c);border:2px dashed var(--g);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:6px}
+.pack .e{font-size:30px}
+#ov{position:fixed;inset:0;background:#0007;display:none;z-index:20}#ov.o{display:block}
+aside{position:fixed;top:0;right:0;bottom:0;width:min(400px,100%);background:var(--c);z-index:21;transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column}
+aside.o{transform:none}
+.ah{display:flex;justify-content:space-between;align-items:center;padding:14px;border-bottom:1px solid var(--b);font-weight:700}
+.ah button{background:none;border:0;font-size:22px;cursor:pointer;color:var(--t)}
+#body{flex:1;overflow:auto;padding:12px 14px}
+.li{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--b)}
+.li .e{font-size:28px}.li div.t{flex:1;font-size:13px}
+.qt button{width:26px;height:26px;border:1px solid var(--b);background:var(--bg);color:var(--t);border-radius:6px;cursor:pointer}
+.qt{display:flex;gap:6px;align-items:center}
+.sg{display:flex;gap:8px;overflow:auto;padding-bottom:6px}
+.sg button{flex:0 0 auto;border:1px solid var(--b);background:var(--bg);color:var(--t);border-radius:10px;padding:8px;font-size:12px;cursor:pointer}
+.ft{padding:14px;border-top:1px solid var(--b);display:flex;flex-direction:column;gap:8px}
+.tot{display:flex;justify-content:space-between;font-weight:800;font-size:17px}
+.f{display:flex;flex-direction:column;gap:10px}.f label{font-size:13px;font-weight:600;display:flex;flex-direction:column;gap:4px}
+.wafab{position:fixed;right:16px;bottom:16px;background:#25d366;color:#fff;border-radius:30px;padding:12px 16px;font-weight:700;text-decoration:none;box-shadow:0 4px 14px #0004;z-index:9}
+footer{text-align:center;color:var(--m);font-size:12px;padding:30px 14px 80px}
+.empty{color:var(--m);text-align:center;padding:30px 0}
+:focus-visible{outline:3px solid #2563eb;outline-offset:2px}
+</style>
+</head>
+<body>
+<header><div class="w bar">
+<a class="logo" href="#top">KALATA SHOP</a>
+<nav><a href="#produits">Boutique</a><a href="#cats">Catégories</a><a href="#packs">Packs</a><a href="#how">Comment commander ?</a></nav>
+<span class="sp"></span><input id="q" type="search" placeholder="Rechercher" aria-label="Rechercher">
+<button class="cartb" id="cb" aria-label="Ouvrir le panier">🛒<span id="n">0</span></button>
+</div></header>
+<div class="ship"><div class="w"><span id="st"></span><div class="pb"><i id="pi"></i></div></div></div>
+
+<section class="hero"><div class="w"><h1>Accessoires téléphone, auto et gadgets, livrés chez vous en Côte d'Ivoire</h1><p>Choisissez vos articles et confirmez en 2 minutes sur WhatsApp.</p><div class="hb"><a class="b1" href="#produits">Voir les produits</a><a class="b2" href="#packs">Packs à prix réduit</a></div></div></section>
+<div class="w trust"><div><span>🚚</span>Livraison en Côte d'Ivoire</div><div><span>🎁</span>Livraison gratuite dès 15 000 FCFA</div><div><span>💬</span>Commande simple sur WhatsApp</div><div><span>📦</span>Packs moins chers</div></div>
+<main class="w" id="top">
+<h2 id="cats">Nos catégories</h2>
+<div class="cats" id="cl"></div>
+
+<h2 id="produits">Nos produits</h2>
+<p class="sub">Touchez une catégorie pour filtrer, touchez-la encore pour tout revoir.</p>
+<div class="grid" id="g"></div>
+
+<h2 id="packs">Packs à prix réduit</h2>
+<p class="sub">Achetez ensemble, payez moins.</p>
+<div class="packs" id="pk"></div>
+
+<h2 id="how">Comment commander ?</h2>
+<div class="packs">
+<div class="pack"><div class="e">🛒</div><b>1. Ajoutez au panier</b><span class="sub">Choisissez vos articles.</span></div>
+<div class="pack"><div class="e">📝</div><b>2. Indiquez nom, téléphone et quartier</b><span class="sub">Rien d'autre à remplir.</span></div>
+<div class="pack"><div class="e">💬</div><b>3. Confirmez sur WhatsApp</b><span class="sub">Nous vous livrons en Côte d'Ivoire et vous payez à la réception.</span></div>
+</div>
+</main>
+<footer>© KALATA SHOP – Livraison en Côte d'Ivoire · WhatsApp +225 05 74 14 73 75</footer>
+<a class="wafab" id="wf" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
+
+<div id="ov"></div>
+<aside id="as" aria-label="Panier"><div class="ah"><span id="at">Mon panier</span><button id="cx" aria-label="Fermer">×</button></div>
+<div id="body"></div><div class="ft" id="ft"></div></aside>
+
+<script>
+var WA="2250574147375",FREE=15000,SEUIL_LABEL="15 000 FCFA";
+var CATS=[["📱","Accessoires téléphone"],["🏠","Maison & cuisine"],["🚗","Auto & moto"],["💡","Gadgets électroniques"]];
+// id, nom, catégorie (0-3), prix, ancien prix (0 si aucun), emoji, souvent acheté avec (ids), photo optionnelle (ex: "photos/13.jpg")
+var P=[
+[1,"Support téléphone multifonction",0,7990,0,"📱",[4,7]],
+[2,"Câble de charge rapide",0,4990,6500,"🔌",[3,6]],
+[3,"Écouteurs Bluetooth",0,9990,12500,"🎧",[2,6]],
+[4,"Coque de protection",0,3500,0,"🛡️",[5,1]],
+[5,"Verre trempé (écran)",0,2500,0,"🔲",[4,2]],
+[6,"Batterie externe 10 000 mAh",0,12990,15000,"🔋",[2,3]],
+[7,"Bague support téléphone",0,1990,0,"💍",[4,5]],
+[8,"Support téléphone voiture",2,6990,8500,"🚗",[9,2]],
+[9,"Chargeur voiture double USB",2,5000,0,"🔌",[8,2]],
+[10,"Montre connectée",3,15000,19000,"⌚",[3,6]],
+[11,"Perche à selfie / trépied",3,5000,0,"📸",[1,7]],
+[12,"Lampe LED USB flexible",1,3000,0,"💡",[2,6]],
+[13,"Support voiture à gravité (grille d'aération)",2,6500,8500,"🚗",[9,2]]
+];
+var PACKS=[
+{n:"Pack Protection",e:"🛡️",ids:[4,5,7],prix:6990},
+{n:"Pack Voiture",e:"🚗",ids:[8,9],prix:10990},
+{n:"Pack Musique & Énergie",e:"🎧",ids:[3,6,2],prix:24900}
+];
+var cart={},cat=-1,qs="";
+try{cart=JSON.parse(localStorage.getItem("kcart")||"{}")}catch(e){cart={}}
+function $(i){return document.getElementById(i)}
+function f(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,"\u202f")+" FCFA"}
+function prod(id){return P.filter(function(p){return p[0]==id})[0]}
+function save(){try{localStorage.setItem("kcart",JSON.stringify(cart))}catch(e){}}
+function lines(){var l=[];for(var k in cart){if(k.charAt(0)=="p"){var pk=PACKS[+k.slice(1)];l.push({k:k,nm:pk.n,e:pk.e,pr:pk.prix,q:cart[k]})}else{var p=prod(k);if(p)l.push({k:k,nm:p[1],e:p[5],pr:p[3],q:cart[k]})}}return l}
+function total(){return lines().reduce(function(s,l){return s+l.pr*l.q},0)}
+function count(){return lines().reduce(function(s,l){return s+l.q},0)}
+function msg(t){return "https://wa.me/"+WA+"?text="+encodeURIComponent(t)}
+$("wf").href=msg("Bonjour KALATA SHOP, j'ai une question.");
+
+function renderCats(){$("cl").innerHTML=CATS.map(function(c,i){return '<button class="cat'+(cat==i?' on':'')+'" data-c="'+i+'"><span>'+c[0]+'</span>'+c[1]+'</button>'}).join("")}
+function renderGrid(){
+ var l=P.filter(function(p){return(cat<0||p[2]==cat)&&p[1].toLowerCase().indexOf(qs)>-1});
+ $("g").innerHTML=l.length?l.map(function(p){
+  var tag=p[4]?'<span class="tag">-'+Math.round((1-p[3]/p[4])*100)+'%</span>':'';
+  return '<div class="card c'+p[2]+'">'+tag+'<div class="img">'+(p[7]?'<img loading="lazy" alt="'+p[1]+'" src="'+p[7]+'">':p[5])+'</div><div class="in"><div class="nm">'+p[1]+'</div><div class="pr">'+f(p[3])+(p[4]?'<span class="old">'+f(p[4])+'</span>':'')+'</div><button class="add" data-a="'+p[0]+'">Ajouter au panier</button><button class="wa" data-w="'+p[0]+'">Commander sur WhatsApp</button></div></div>'}).join(""):'<p class="empty">Aucun produit trouvé.</p>'}
+function renderPacks(){$("pk").innerHTML=PACKS.map(function(k,i){
+ var sum=k.ids.reduce(function(s,id){return s+prod(id)[3]},0);
+ return '<div class="pack"><div class="e">'+k.e+'</div><b>'+k.n+'</b><span class="sub">'+k.ids.map(function(id){return prod(id)[1]}).join(" + ")+'</span><div class="pr">'+f(k.prix)+'<span class="old">'+f(sum)+'</span></div><button class="add" data-k="'+i+'">Ajouter le pack</button></div>'}).join("")}
+function ship(){var t=total(),r=FREE-t;
+ $("st").innerHTML=t>=FREE?'🎉 <b>Livraison gratuite</b> débloquée !':(t?'Plus que <b>'+f(r)+'</b> pour la livraison gratuite':'Livraison gratuite dès <b>'+SEUIL_LABEL+'</b>');
+ $("pi").style.width=Math.min(100,t/FREE*100)+"%"}
+function upd(){$("n").textContent=count();ship();save()}
+function add(k,d){cart[k]=(cart[k]||0)+(d||1);if(cart[k]<=0)delete cart[k];upd();if($("as").classList.contains("o"))drawer(step)}
+
+var step=0;
+function open_(s){step=s||0;$("as").classList.add("o");$("ov").classList.add("o");drawer(step)}
+function close_(){$("as").classList.remove("o");$("ov").classList.remove("o")}
+function sugg(){var seen={},out=[];lines().forEach(function(l){if(l.k.charAt(0)!="p")prod(l.k)[6].forEach(function(id){if(!cart[id]&&!seen[id]){seen[id]=1;out.push(prod(id))}})});return out.slice(0,4)}
+function drawer(s){
+ var L=lines(),b=$("body"),ft=$("ft");step=s;
+ if(s==1){$("at").textContent="Vos informations";
+  b.innerHTML='<div class="f"><label>Nom<input id="fn" autocomplete="name"></label><label>Téléphone<input id="fp" type="tel" autocomplete="tel" placeholder="07 00 00 00 00"></label><label>Quartier de livraison<input id="fq" placeholder="Ex : Cocody Angré"></label><p class="sub" id="er" style="color:var(--r)"></p></div>';
+  ft.innerHTML='<div class="tot"><span>Total</span><span>'+f(total())+'</span></div><button class="go" id="send">Envoyer la commande sur WhatsApp</button><button class="wa" id="back">Retour au panier</button>';return}
+ $("at").textContent="Mon panier";
+ if(!L.length){b.innerHTML='<p class="empty">Votre panier est vide.<br>Ajoutez un produit pour commencer.</p>';ft.innerHTML='';return}
+ var h=L.map(function(l){return '<div class="li"><span class="e">'+l.e+'</span><div class="t">'+l.nm+'<br><b>'+f(l.pr)+'</b></div><div class="qt"><button data-d="-1" data-k="'+l.k+'">−</button>'+l.q+'<button data-d="1" data-k="'+l.k+'">+</button></div></div>'}).join("");
+ var S=sugg();if(S.length)h+='<h3 style="font-size:14px;margin:14px 0 8px">Souvent acheté avec</h3><div class="sg">'+S.map(function(p){return '<button data-a="'+p[0]+'">'+p[5]+' '+p[1]+'<br><b>'+f(p[3])+'</b> +</button>'}).join("")+'</div>';
+ b.innerHTML=h;
+ ft.innerHTML='<div class="tot"><span>Total</span><span>'+f(total())+'</span></div><small class="empty" style="padding:0">'+(total()>=FREE?'Livraison gratuite':'Livraison à confirmer sur WhatsApp')+'</small><button class="go" id="next">Commander</button>'}
+function send(){
+ var n=$("fn").value.trim(),p=$("fp").value.trim(),q=$("fq").value.trim();
+ if(!n||p.replace(/\D/g,"").length<8||!q){$("er").textContent="Renseignez votre nom, un numéro valide et votre quartier.";return}
+ var t="Bonjour KALATA SHOP, je souhaite commander :\n"+lines().map(function(l){return "• "+l.q+" x "+l.nm+" – "+f(l.pr*l.q)}).join("\n")+"\n\nTotal : "+f(total())+(total()>=FREE?" (livraison gratuite)":"")+"\nNom : "+n+"\nTéléphone : "+p+"\nQuartier : "+q;
+ window.open(msg(t),"_blank")}
+
+document.addEventListener("click",function(e){
+ var t=e.target.closest("button");if(!t)return;var d=t.dataset;
+ if(d.c!==undefined){var c=+d.c;cat=cat==c?-1:c;renderCats();renderGrid()}
+ else if(d.a){add(d.a);if(!$("as").classList.contains("o"))open_(0)}
+ else if(d.k!==undefined&&d.d===undefined){add("p"+d.k);open_(0)}
+ else if(d.d){add(d.k,+d.d)}
+ else if(d.w){var p=prod(d.w);window.open(msg("Bonjour KALATA SHOP, je veux commander : "+p[1]+" – "+f(p[3])+". Livraison possible à mon quartier ?"),"_blank")}
+ else if(t.id=="next")drawer(1);else if(t.id=="back")drawer(0);else if(t.id=="send")send();
+ else if(t.id=="cx")close_();else if(t.id=="cb")open_(0)});
+$("ov").onclick=close_;
+$("q").oninput=function(){qs=this.value.toLowerCase().trim();renderGrid()};
+renderCats();renderGrid();renderPacks();upd();
+</script>
+</body>
+</html>
