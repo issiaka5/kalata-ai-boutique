@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KALATA SHOP – Chaussures, livraison en Côte d’Ivoire</title>
+<meta name="description" content="Baskets, chaussures de sport, boots et claquettes. Commande rapide sur WhatsApp, livraison en Côte d’Ivoire.">
+<meta property="og:title" content="KALATA SHOP – Chaussures, livraison en Côte d’Ivoire">
+<meta property="og:description" content="Choisissez votre pointure et commandez sur WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KALATA SHOP">
+<meta property="og:url" content="https://issiaka5.github.io/kalata-ai-boutique/">
+<meta property="og:image" content="https://issiaka5.github.io/kalata-ai-boutique/couverture.jpg">
+<meta name="theme-color" content="#0b4a2f">
+<!-- PINTEREST : remplace cette ligne par la balise de vérification donnée par Pinterest -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,800;1,800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14221a;--green:#16a34a;--deep:#0b4a2f;--paper:#f4f7f4;--gum:#c8923f;--line:#dde5dd;--pin:#e60023}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Archivo,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.45}
+a{color:inherit}
+button,select,input{font:inherit}
+:focus-visible{outline:3px solid var(--gum);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 16px}
+.top{background:var(--deep);color:#fff;font-size:13px;font-weight:600}
+.top .wrap{display:flex;gap:20px;align-items:center;height:40px;overflow:hidden;white-space:nowrap}
+.top a{margin-left:auto;text-decoration:none}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.hd{display:flex;align-items:center;gap:12px;padding-top:10px;padding-bottom:6px;flex-wrap:wrap}
+.brand{text-decoration:none;display:flex;align-items:center;gap:8px;line-height:1}
+.brand .l{font-size:34px}
+.brand b{font-size:30px;font-weight:800;font-style:italic;color:var(--green)}
+.brand b i{color:var(--deep)}
+.brand small{display:block;font-size:11px;font-weight:600;color:#4b5f52;margin-top:3px}
+.search{flex:1;min-width:200px;display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--paper)}
+.search input{flex:1;border:0;background:none;padding:11px 12px;min-width:0}
+.search button{border:0;background:var(--deep);color:#fff;padding:0 16px;cursor:pointer}
+.hb{border:0;background:none;cursor:pointer;font-weight:600;font-size:14px;padding:6px 8px}
+.cartbtn{border:0;background:var(--deep);color:#fff;padding:12px 18px;border-radius:10px;font-weight:800;cursor:pointer;white-space:nowrap}
+.nav{display:flex;gap:6px;overflow-x:auto;padding:4px 16px 10px;max-width:1240px;margin:0 auto}
+.nav button,.chips button{flex:none;border:1px solid var(--line);background:#fff;padding:9px 16px;border-radius:999px;font-weight:600;cursor:pointer}
+.nav button{border-color:transparent;border-radius:10px}
+.nav button[aria-pressed=true],.chips button[aria-pressed=true]{background:var(--deep);color:#fff;border-color:var(--deep)}
+.hz{display:grid;gap:14px;margin:14px 0}
+@media(min-width:900px){.hz{grid-template-columns:1fr 300px}}
+.hero{background:linear-gradient(120deg,#0b4a2f 45%,#14803f);color:#fff;border-radius:14px;padding:30px 28px;display:flex;align-items:center;justify-content:space-between;gap:10px;overflow:hidden;min-height:260px}
+.hero small{color:#4ade80;font-weight:800;font-size:18px}
+.hero h1{font-size:clamp(28px,5vw,48px);line-height:1.05;margin:4px 0 12px;font-weight:800}
+.hero h1 em{font-style:normal;color:#4ade80}
+.hero p{margin:0 0 18px;color:#d6efe1;max-width:30em}
+.wab{display:inline-block;background:#22c55e;color:#fff;font-weight:800;padding:12px 20px;border-radius:999px;text-decoration:none}
+.art{font-size:min(26vw,140px);transform:rotate(-12deg);flex:none}
+.art img{max-width:400px;width:100%;border-radius:12px;transform:rotate(12deg)}
+.perks{background:#e8f1ea;border-radius:14px;padding:4px 16px;display:grid;align-content:center}
+.perks div{padding:11px 0;border-bottom:1px solid #d3e0d6;font-size:14px}
+.perks div:last-child{border:0}
+.perks b{display:block}
+.perks span{font-size:13px;color:#4b5f52}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:6px 0 4px}
+h2{font-size:24px;margin:20px 0 2px}
+.sub{margin:0 0 14px;color:#4b5f52;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;padding-bottom:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.tile{height:150px;display:flex;align-items:center;justify-content:center;font-size:64px;position:relative}
+.tile img{width:100%;height:100%;object-fit:contain;background:#fff}
+.bd{position:absolute;top:8px;left:8px;color:#fff;font-size:12px;font-weight:700;padding:2px 9px;border-radius:6px;background:var(--green)}
+.bd.hot{background:#e11d1d}.bd.promo{background:#ea580c}.bd.amz{background:#1d6fd8}
+.fav{position:absolute;top:6px;right:6px;width:32px;height:32px;border-radius:50%;border:0;background:rgba(255,255,255,.95);cursor:pointer;font-size:17px;color:#e11d48}
+.body{padding:12px;display:flex;flex-direction:column;gap:5px;flex:1}
+.brandname{font-size:12px;font-weight:600;color:#5b6f61;text-transform:uppercase}
+.body h3{margin:0;font-size:14px;line-height:1.25;font-weight:600}
+.price{font-weight:800;font-size:17px;color:var(--green)}
+.old{text-decoration:line-through;color:#8a998f;font-weight:400;font-size:13px;margin-right:6px}
+.row{display:grid;gap:6px;margin-top:auto}
+.sl{font-size:12px;color:#4b5f52;display:grid;gap:2px}
+.sl select{padding:8px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:14px}
+.add{border:0;background:var(--green);color:#fff;font-weight:700;border-radius:8px;padding:10px;cursor:pointer;text-align:center;text-decoration:none;font-size:14px}
+.add.amz{background:var(--ink)}
+.pin{display:block;text-align:center;font-size:13px;font-weight:600;color:var(--pin);text-decoration:none;padding-top:2px}
+.empty{padding:30px;text-align:center;color:#4b5f52;grid-column:1/-1}
+.note{font-size:13px;color:#4b5f52;background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:14px}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:10px 0 30px}
+.strip>*{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;font-size:14px;text-decoration:none;display:block;text-align:left}
+.strip b{display:block;font-size:15px}
+.strip .pk{background:var(--deep);color:#fff;border:0;cursor:pointer;font:inherit}
+.strip .pk span{color:#4ade80;font-weight:800}
+footer{background:var(--deep);color:#d6e6db;padding:22px 0;font-size:14px}
+footer a{color:#fff;font-weight:600}
+.follow{display:inline-block;margin-top:8px;background:var(--pin);color:#fff;padding:8px 14px;border-radius:999px;font-weight:600;text-decoration:none}
+.wafab{position:fixed;right:16px;bottom:16px;width:56px;height:56px;border-radius:50%;background:#22c55e;display:grid;place-items:center;font-size:28px;text-decoration:none;z-index:15;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(420px,100%);background:#fff;z-index:40;transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column;box-shadow:-8px 0 30px rgba(0,0,0,.18)}
+.drawer.open{transform:none}
+.dhead{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line);font-weight:800}
+.dhead button{border:0;background:none;font-size:26px;cursor:pointer}
+.items{flex:1;overflow:auto;padding:8px 16px}
+.item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);align-items:center}
+.item .t{flex:1;font-size:14px}
+.item .t small{display:block;color:#5b6f61}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{width:28px;height:28px;border-radius:6px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.dfoot{padding:14px 16px;border-top:1px solid var(--line);display:grid;gap:8px}
+.bar{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--green);width:0;transition:width .2s}
+.dfoot input{padding:10px;border:1px solid var(--line);border-radius:8px}
+.send{border:0;background:#25a244;color:#fff;font-weight:800;border-radius:8px;padding:12px;cursor:pointer}
+.msg{font-size:13px;color:#a12b2b;min-height:1em}
+.veil{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:30;display:none}
+.veil.on{display:block}
+@media(max-width:700px){.top .wrap span:nth-child(n+2){display:none}.hero{padding:22px 18px}.art{display:none}}
+@media (prefers-reduced-motion:reduce){.drawer,.bar i{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <span>🚚 Livraison en Côte d’Ivoire</span><span>🏷️ Livraison gratuite dès 15 000 FCFA</span><span>💬 Commande sur WhatsApp</span>
+  <a href="https://www.pinterest.com/idrissadjeme5/" target="_blank" rel="noopener">📌 Pinterest</a>
+</div></div>
+
+<header>
+  <div class="wrap hd">
+    <a class="brand" href="#top"><span class="l">👟</span><span><b>KALATA <i>SHOP</i></b><small>Vos chaussures, notre priorité</small></span></a>
+    <div class="search"><input id="q" type="search" placeholder="Rechercher une chaussure, une marque, une catégorie..." aria-label="Rechercher"><button type="button" id="go" aria-label="Rechercher">🔍</button></div>
+    <button class="hb" id="favBtn" type="button">♡ Favoris (<span id="favc">0</span>)</button>
+    <button class="cartbtn" id="openCart" type="button">🛒 Panier (<span id="count">0</span>)</button>
+  </div>
+  <nav class="nav" id="nav" aria-label="Catégories"></nav>
+</header>
+
+<main class="wrap" id="top">
+  <section class="hz">
+    <div class="hero">
+      <div>
+        <small>KALATA SHOP</small>
+        <h1>Les meilleures chaussures au <em>meilleur prix !</em></h1>
+        <p>Baskets, boots, claquettes, chaussures de sport... Livraison rapide en Côte d’Ivoire.</p>
+        <a class="wab" id="heroWa" href="#" target="_blank" rel="noopener">💬 Commander sur WhatsApp →</a>
+      </div>
+      <div class="art" id="art">👟</div>
+    </div>
+    <aside class="perks">
+      <div><b>🚚 Livraison en Côte d’Ivoire</b><span>Partout dans le pays</span></div>
+      <div><b>🎁 Livraison gratuite</b><span>Dès 15 000 FCFA</span></div>
+      <div><b>🛡️ Paiement à la livraison</b><span>En toute sécurité</span></div>
+      <div><b>💬 Service client WhatsApp</b><span>Réponse rapide</span></div>
+    </aside>
+  </section>
+
+  <div class="chips" id="cats" role="group" aria-label="Catégories"></div>
+  <h2 id="title">Nos meilleures ventes</h2>
+  <p class="sub" id="sub"></p>
+  <div class="note" id="amzNote" hidden>Les produits « Voir sur Amazon » sont vendus par Amazon : vérifiez sur la fiche que la livraison en Côte d’Ivoire est possible. Liens partenaires : nous pouvons percevoir une commission, sans frais pour vous.</div>
+  <div class="grid" id="grid"></div>
+
+  <section class="strip" id="produits">
+    <a href="#" id="helpWa" target="_blank" rel="noopener"><b>📞 Besoin d’aide ?</b>Écrivez-nous sur WhatsApp<br>+225 05 74 14 73 75</a>
+    <button type="button" class="pk" id="packsBtn"><b>Packs &amp; Économies</b>Profitez de nos offres spéciales <span>J’en profite →</span></button>
+    <div><b>🛡️ Paiement sécurisé</b>À la livraison ou via WhatsApp</div>
+    <div><b>📍 Livraison rapide</b>En Côte d’Ivoire</div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© KALATA SHOP · Livraison en Côte d’Ivoire · WhatsApp +225 05 74 14 73 75<br>
+  <a class="follow" href="https://www.pinterest.com/idrissadjeme5/" target="_blank" rel="noopener">📌 Suivre sur Pinterest</a></div>
+</footer>
+
+<a class="wafab" id="fabWa" href="#" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp">💬</a>
+<div class="veil" id="veil"></div>
+<aside class="drawer" id="drawer" aria-label="Mon panier">
+  <div class="dhead">Mon panier <button id="closeCart" aria-label="Fermer le panier">×</button></div>
+  <div class="items" id="items"></div>
+  <div class="dfoot">
+    <div id="ship" style="font-size:13px"></div>
+    <div class="bar"><i id="barfill"></i></div>
+    <div style="display:flex;justify-content:space-between;font-weight:800"><span>Total</span><span id="total">0 FCFA</span></div>
+    <input id="fname" placeholder="Votre nom" autocomplete="name">
+    <input id="fphone" placeholder="Votre téléphone" inputmode="tel" autocomplete="tel">
+    <input id="fzone" placeholder="Votre quartier">
+    <div class="msg" id="msg" role="alert"></div>
+    <button class="send" id="send">Commander sur WhatsApp</button>
+  </div>
+</aside>
+
+<script>
+/* ===== À MODIFIER : tes produits =====
+   type "stock"  : tu livres toi-même, le client choisit la pointure et commande sur WhatsApp
+   type "amazon" : bouton « Voir sur Amazon », remplace href par TON lien partenaire
+   price : prix en FCFA   old : ancien prix barré (optionnel)   badge : "Top vente", "Nouveau", "Promo -15%"
+   img   : lien de ta photo (optionnel). Sans photo, une pastille de couleur s’affiche. */
+var WA="2250574147375", FREE=15000, HERO_IMG="";
+var AMZ="https://www.amazon.fr/dp/XXXXXXXX?tag=TON-TAG";
+var PRODUCTS=[
+ {id:"p1",name:"Baskets noires en daim",brand:"Puma",cat:"Baskets",price:22000,badge:"Top vente",color:"#2b2f2c",type:"stock",sizes:[40,41,42,43,44,45]},
+ {id:"p2",name:"Baskets blanches classiques",brand:"Puma",cat:"Baskets",price:22000,badge:"Nouveau",color:"#9aa39d",type:"stock",sizes:[39,40,41,42,43,44]},
+ {id:"p3",name:"Baskets marron en daim, semelle gomme",brand:"Adidas",cat:"Baskets",price:28000,old:33000,badge:"Promo -15%",color:"#7a5238",type:"stock",sizes:[40,41,42,43,44]},
+ {id:"p4",name:"Baskets vert foncé en daim",brand:"Adidas",cat:"Baskets",price:28000,color:"#1f6b4a",type:"amazon",href:AMZ,sizes:[40,41,42,43,44,45]},
+ {id:"p5",name:"Baskets running noires en mesh",brand:"Puma",cat:"Running et sport",price:20000,color:"#262626",type:"stock",sizes:[40,41,42,43,44,45,46]},
+ {id:"p6",name:"Chaussures de salle noires",brand:"Adidas",cat:"Running et sport",price:26000,color:"#1e293b",type:"amazon",href:AMZ,sizes:[40,41,42,43,44,45]},
+ {id:"p7",name:"Baskets montantes camel doublées",brand:"Adidas",cat:"Boots et hiver",price:35000,badge:"Top vente",color:"#b0803d",type:"stock",sizes:[40,41,42,43,44,45]},
+ {id:"p8",name:"Desert boots en cuir marron",brand:"Divers",cat:"Boots et hiver",price:38000,badge:"Nouveau",color:"#5a3a26",type:"stock",sizes:[41,42,43,44,45]},
+ {id:"p9",name:"Chaussures de randonnée basses",brand:"Adidas Terrex",cat:"Randonnée",price:45000,color:"#3b3b3b",type:"amazon",href:AMZ,sizes:[40,41,42,43,44,45,46]},
+ {id:"p10",name:"Claquettes noires",brand:"Puma",cat:"Claquettes",price:9000,color:"#1f1f1f",type:"stock",sizes:[40,41,42,43,44,45]},
+ {id:"p11",name:"Tongs en tissu grises",brand:"Quiksilver",cat:"Claquettes",price:8000,color:"#6b7280",type:"stock",sizes:[40,41,42,43,44,45]},
+ {id:"p12",name:"Pack 2 paires : baskets blanches + noires",brand:"Puma",cat:"Packs",price:40000,color:"#9aa39d",type:"stock",sizes:[40,41,42,43,44]},
+ {id:"p13",name:"Baskets grises et bleues à scratch",brand:"",cat:"Running et sport",price:33300,color:"#64748b",type:"amazon",href:AMZ,img:"",sizes:[40,41,42,43,44,45]},
+ {id:"p14",name:"Baskets blanches et beige",brand:"HOBIBEAR",cat:"Baskets",price:25300,color:"#d6cbb5",type:"amazon",href:AMZ,img:"",sizes:[40,41,42,43,44,45]},
+ {id:"p15",name:"Baskets en cuir noir, semelle blanche",brand:"",cat:"Baskets",price:55100,color:"#1f1f1f",type:"amazon",href:AMZ,img:"",sizes:[40,41,42,43,44,45]},
+ {id:"p16",name:"Chaussures de sécurité beiges et orange",brand:"BELLOTA",cat:"Travail",price:43000,color:"#c9b79c",type:"amazon",href:AMZ,img:"",sizes:[40,41,42,43,44,45,46]},
+ {id:"p17",name:"Chaussures de randonnée en cuir marron",brand:"ECCO",cat:"Randonnée",price:63000,color:"#6b4f3a",type:"amazon",href:AMZ,img:"",sizes:[40,41,42,43,44,45,46]}
+];
+/* ===== fin de la zone à modifier ===== */
+
+var cart=[],favs=[],cat="Tout",query="",onlyFav=false;
+function $(id){return document.getElementById(id)}
+function fcfa(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g," ")+" FCFA"}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function getP(id){return PRODUCTS.filter(function(x){return x.id===id})[0]}
+try{cart=JSON.parse(localStorage.getItem("kalata_cart"))||[];favs=JSON.parse(localStorage.getItem("kalata_favs"))||[]}catch(e){}
+function persist(){try{localStorage.setItem("kalata_cart",JSON.stringify(cart));localStorage.setItem("kalata_favs",JSON.stringify(favs))}catch(e){}}
+
+var waLink="https://wa.me/"+WA+"?text="+encodeURIComponent("Bonjour KALATA SHOP, je voudrais des renseignements.");
+$("heroWa").href=waLink;$("helpWa").href=waLink;$("fabWa").href=waLink;
+if(HERO_IMG)$("art").innerHTML='<img src="'+esc(HERO_IMG)+'" alt="">';
+
+function buildCats(){
+  var list=["Tout"];
+  PRODUCTS.forEach(function(p){if(list.indexOf(p.cat)<0)list.push(p.cat)});
+  var h=list.map(function(c){return '<button type="button" data-c="'+esc(c)+'" aria-pressed="'+(c===cat&&!onlyFav)+'">'+esc(c)+'</button>'}).join("");
+  $("cats").innerHTML=h;$("nav").innerHTML=h;
+}
+function onCat(e){var b=e.target.closest("button");if(!b)return;onlyFav=false;cat=(cat===b.dataset.c)?"Tout":b.dataset.c;buildCats();render()}
+$("cats").onclick=onCat;$("nav").onclick=onCat;
+$("favBtn").onclick=function(){onlyFav=!onlyFav;cat="Tout";buildCats();render();$("title").scrollIntoView()};
+$("packsBtn").onclick=function(){onlyFav=false;cat="Packs";buildCats();render();$("title").scrollIntoView()};
+$("go").onclick=function(){$("title").scrollIntoView()};
+
+function render(){
+  $("favc").textContent=favs.length;
+  var list=PRODUCTS.filter(function(p){
+    if(onlyFav&&favs.indexOf(p.id)<0)return false;
+    if(cat!=="Tout"&&p.cat!==cat)return false;
+    var t=(p.name+" "+p.brand+" "+p.cat).toLowerCase();
+    return !query||t.indexOf(query)>-1;
+  });
+  $("title").textContent=onlyFav?"Mes favoris":(cat==="Tout"?"Nos meilleures ventes":cat);
+  $("sub").textContent=list.length+(list.length>1?" modèles":" modèle");
+  $("amzNote").hidden=!list.some(function(p){return p.type==="amazon"});
+  if(!list.length){$("grid").innerHTML='<div class="empty">Aucune chaussure pour ce choix. Essayez une autre catégorie.</div>';return}
+  $("grid").innerHTML=list.map(function(p){
+    var pic=p.img?'<img src="'+esc(p.img)+'" alt="'+esc(p.name)+'" loading="lazy">':'👟';
+    var bd=p.type==="amazon"?'<span class="bd amz">Amazon</span>':(p.badge?'<span class="bd '+(p.badge==="Top vente"?"hot":(p.badge.indexOf("Promo")===0?"promo":""))+'">'+esc(p.badge)+'</span>':"");
+    var heart='<button type="button" class="fav" data-f="'+p.id+'" aria-label="Favori">'+(favs.indexOf(p.id)>-1?"♥":"♡")+'</button>';
+    var opts=p.sizes.map(function(s){return '<option value="'+s+'">'+s+'</option>'}).join("");
+    var act=p.type==="amazon"
+      ?'<a class="add amz" href="'+esc(p.href)+'" target="_blank" rel="sponsored noopener">Voir sur Amazon</a>'
+      :'<label class="sl">Pointure<select>'+opts+'</select></label><button class="add" type="button" data-id="'+p.id+'">Ajouter au panier</button>';
+    var pin=p.img?'<a class="pin" target="_blank" rel="noopener" href="https://www.pinterest.com/pin/create/button/?url='+encodeURIComponent(location.origin+location.pathname+'#'+p.id)+'&media='+encodeURIComponent(p.img)+'&description='+encodeURIComponent(p.name+' – '+fcfa(p.price))+'">📌 Enregistrer</a>':'';
+    return '<article class="card" id="'+p.id+'"><div class="tile" style="background:'+p.color+'22">'+pic+bd+heart+'</div><div class="body"><div class="brandname">'+esc(p.brand||"KALATA SHOP")+'</div><h3>'+esc(p.name)+'</h3><div class="price">'+(p.old?'<span class="old">'+fcfa(p.old)+'</span>':'')+fcfa(p.price)+'</div><div class="row">'+act+'</div>'+pin+'</div></article>';
+  }).join("");
+}
+$("grid").onclick=function(e){
+  var f=e.target.closest(".fav");
+  if(f){var i=favs.indexOf(f.dataset.f);if(i>-1)favs.splice(i,1);else favs.push(f.dataset.f);persist();f.textContent=i>-1?"♡":"♥";$("favc").textContent=favs.length;return}
+  var b=e.target.closest(".add[data-id]");if(!b)return;
+  var p=getP(b.dataset.id),s=Number(b.parentNode.querySelector("select").value);
+  var line=cart.filter(function(l){return l.id===p.id&&l.size===s})[0];
+  if(line)line.qty++;else cart.push({id:p.id,size:s,qty:1});
+  persist();drawCart();b.textContent="Ajouté";setTimeout(function(){b.textContent="Ajouter au panier"},900);
+};
+function total(){return cart.reduce(function(t,l){var p=getP(l.id);return t+(p?p.price*l.qty:0)},0)}
+function drawCart(){
+  var n=cart.reduce(function(t,l){return t+l.qty},0);$("count").textContent=n;
+  if(!cart.length){$("items").innerHTML='<p class="sub" style="padding:16px 0">Votre panier est vide. Choisissez une paire et sa pointure.</p>'}
+  else{$("items").innerHTML=cart.map(function(l,i){
+    var p=getP(l.id);if(!p)return"";
+    return '<div class="item"><div class="t">'+esc(p.name)+'<small>Pointure '+l.size+' · '+fcfa(p.price)+'</small></div><div class="qty"><button data-i="'+i+'" data-d="-1" aria-label="Retirer une paire">−</button><b>'+l.qty+'</b><button data-i="'+i+'" data-d="1" aria-label="Ajouter une paire">+</button></div></div>';
+  }).join("")}
+  var t=total();$("total").textContent=fcfa(t);
+  $("barfill").style.width=Math.min(100,t/FREE*100)+"%";
+  $("ship").textContent=t>=FREE?"Livraison gratuite débloquée.":"Plus que "+fcfa(FREE-t)+" pour la livraison gratuite.";
+}
+$("items").onclick=function(e){
+  var b=e.target.closest("button[data-i]");if(!b)return;
+  var l=cart[Number(b.dataset.i)];l.qty+=Number(b.dataset.d);
+  if(l.qty<1)cart.splice(Number(b.dataset.i),1);
+  persist();drawCart();
+};
+function openCart(o){$("drawer").classList.toggle("open",o);$("veil").classList.toggle("on",o)}
+$("openCart").onclick=function(){openCart(true)};
+$("closeCart").onclick=function(){openCart(false)};
+$("veil").onclick=function(){openCart(false)};
+document.addEventListener("keydown",function(e){if(e.key==="Escape")openCart(false)});
+$("q").oninput=function(){query=this.value.trim().toLowerCase();render()};
+$("send").onclick=function(){
+  var name=$("fname").value.trim(),ph=$("fphone").value.trim(),zone=$("fzone").value.trim();
+  if(!cart.length){$("msg").textContent="Ajoutez une paire au panier.";return}
+  if(!name||!ph||!zone){$("msg").textContent="Indiquez votre nom, téléphone et quartier.";return}
+  $("msg").textContent="";
+  var lines=cart.map(function(l){var p=getP(l.id);return "• "+p.name+" (pointure "+l.size+") x"+l.qty+" : "+fcfa(p.price*l.qty)}).join("\n");
+  var text="Bonjour KALATA SHOP, je veux commander :\n"+lines+"\nTotal : "+fcfa(total())+"\n\nNom : "+name+"\nTéléphone : "+ph+"\nQuartier : "+zone;
+  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(text),"_blank");
+};
+buildCats();render();drawCart();
+var h=location.hash.slice(1);if(/^p\d+$/.test(h)&&$(h)){$(h).scrollIntoView();$(h).style.outline="3px solid #c8923f"}
+</script>
+</body>
+</html>
