@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7610946906929012" crossorigin="anonymous"></script><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Cube Puzzle</title>
+<style>html,body{margin:0;height:100%;background:#12082a;overflow:hidden;touch-action:none;font-family:system-ui,sans-serif}canvas{display:block;width:100%;height:100%}#ui{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;background:rgba(10,4,30,.82)}h1{font-size:max(42px,7vmin);margin:0 0 6px;color:#ffd23f}p{margin:6px 16px;font-size:max(18px,3vmin);opacity:.95}button{font-size:max(20px,3.2vmin);padding:14px 28px;margin:6px;border:0;border-radius:30px;background:#ffd23f;color:#222;font-weight:700}button.s{background:#6c5ce7;color:#fff}.h{display:none}.lk{font-size:15px!important;margin-top:14px}.lk a{color:#ffd23f}</style></head><body><canvas id="c"></canvas>
+<div id="ui"><h1 id="t">Cube Puzzle</h1><p id="m">Glisse les blocs sur la grille.<br>Complète des lignes ou des colonnes pour les effacer !</p><p id="sc"></p><button id="go">Jouer</button><button id="rv" class="s h">▶ Continuer (pub récompensée)</button><button id="mu" class="s">🔊</button><p class="lk"><a href="comment-jouer.html">Comment jouer</a> · <a href="a-propos.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="confidentialite.html">Confidentialité</a></p></div>
+<script>
+const cv=document.getElementById('c'),x=cv.getContext('2d'),ui=document.getElementById('ui');
+let W,H,B,bx,by,cs;
+function rs(){const r=devicePixelRatio||1;W=cv.width=innerWidth*r;H=cv.height=innerHeight*r;B=Math.min(W*.94,H*.52);cs=B/8;bx=(W-B)/2;by=H*.14}
+addEventListener('resize',rs);rs();
+const SH=[[[1]],[[1,1]],[[1],[1]],[[1,1,1]],[[1],[1],[1]],[[1,1,1,1]],[[1],[1],[1],[1]],[[1,1],[1,1]],[[1,1,1],[1,1,1],[1,1,1]],[[1,0],[1,0],[1,1]],[[0,1],[0,1],[1,1]],[[1,1,1],[1,0,0]],[[1,1,1],[0,0,1]],[[1,1,0],[0,1,1]],[[0,1,1],[1,1,0]],[[0,1,0],[1,1,1]],[[1,1],[1,0]],[[1,1],[0,1]]];
+const COL=['#ff5fa2','#00e5ff','#ffd23f','#7bed9f','#a29bfe','#ff9f43','#ff6b6b'];
+let best=0;try{best=+localStorage.getItem('cp_best')||0}catch(e){}
+let g,tray=[],drag=null,score=0,combo=0,over=true,used=false,AC,mute=false;
+const rnd=()=>({m:SH[Math.random()*SH.length|0],c:Math.random()*7|0});
+function newTray(){tray=[rnd(),rnd(),rnd()]}
+function snd(f,d,ty,v){if(mute||!AC)return;try{const o=AC.createOscillator(),k=AC.createGain();o.type=ty||'square';o.frequency.value=f;k.gain.value=v||.08;o.connect(k);k.connect(AC.destination);o.start();k.gain.exponentialRampToValueAtTime(.001,AC.currentTime+d);o.stop(AC.currentTime+d)}catch(e){}}
+function reset(){AC=AC||new(window.AudioContext||window.webkitAudioContext)();g=Array.from({length:8},()=>Array(8).fill(0));score=0;combo=0;over=false;used=false;drag=null;newTray();ui.style.display='none'}
+function fits(m,gx,gy){for(let r=0;r<m.length;r++)for(let c=0;c<m[0].length;c++)if(m[r][c]){const a=gy+r,b=gx+c;if(a<0||b<0||a>7||b>7||g[a][b])return false}return true}
+function canAny(){for(const p of tray)if(p)for(let a=0;a<8;a++)for(let b=0;b<8;b++)if(fits(p.m,b,a))return true;return false}
+function end(){over=true;if(score>best){best=score;try{localStorage.setItem('cp_best',best)}catch(e){}}
+ document.getElementById('t').textContent='Partie terminée';document.getElementById('m').textContent='';
+ document.getElementById('sc').innerHTML='Score : '+score+'<br>Record : '+best;document.getElementById('go').textContent='Rejouer';
+ document.getElementById('rv').classList.toggle('h',used);ui.style.display='flex';snd(150,.4,'sawtooth',.12)}
+function place(i,gx,gy){const p=tray[i];let n=0;
+ p.m.forEach((row,r)=>row.forEach((v,c)=>{if(v){g[gy+r][gx+c]=p.c+1;n++}}));score+=n;tray[i]=null;
+ const rr=[],cc=[];for(let k=0;k<8;k++){if(g[k].every(v=>v))rr.push(k);if(g.every(row=>row[k]))cc.push(k)}
+ const L=rr.length+cc.length;
+ if(L){rr.forEach(k=>g[k].fill(0));cc.forEach(k=>g.forEach(row=>row[k]=0));combo++;score+=L*10*L+combo*5;snd(600+L*150,.25,'triangle')}else{combo=0;snd(300,.08)}
+ if(tray.every(t=>!t))newTray();
+ if(!canAny())end()}
+// Remplacer par ton SDK de pub récompensée (AdMob) : appeler revive() à la fin de la pub
+function showRewardedAd(){revive()}
+function revive(){used=true;for(let r=2;r<6;r++)g[r].fill(0);newTray();over=false;ui.style.display='none'}
+document.getElementById('go').onclick=reset;document.getElementById('rv').onclick=showRewardedAd;
+document.getElementById('mu').onclick=e=>{mute=!mute;e.target.textContent=mute?'🔇':'🔊'};
+const pt=e=>{const r=devicePixelRatio||1;return[e.clientX*r,e.clientY*r]};
+const slotY=()=>by+B+(H-by-B)/2;
+addEventListener('pointerdown',e=>{if(over)return;const[px,py]=pt(e);if(py>by+B){const i=Math.floor(px/(W/3));if(tray[i])drag={i,x:px,y:py}}});
+addEventListener('pointermove',e=>{if(drag){const[px,py]=pt(e);drag.x=px;drag.y=py}});
+function pos(){const p=tray[drag.i],w=p.m[0].length,h=p.m.length,ox=drag.x-w*cs/2,oy=drag.y-h*cs/2-cs*1.6;return{p,ox,oy,gx:Math.round((ox-bx)/cs),gy:Math.round((oy-by)/cs)}}
+addEventListener('pointerup',()=>{if(drag){const s=pos();if(fits(s.p.m,s.gx,s.gy))place(drag.i,s.gx,s.gy);drag=null}});
+function cell(px,py,s,col,a){x.globalAlpha=a||1;x.fillStyle=col;x.fillRect(px+1,py+1,s-2,s-2);x.fillStyle='rgba(255,255,255,.28)';x.fillRect(px+1,py+1,s-2,s*.2);x.globalAlpha=1}
+function piece(p,ox,oy,s,a){p.m.forEach((row,r)=>row.forEach((v,c)=>{if(v)cell(ox+c*s,oy+r*s,s,COL[p.c],a)}))}
+function draw(){
+ const bg=x.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#1b0b4a');bg.addColorStop(1,'#3a1670');x.fillStyle=bg;x.fillRect(0,0,W,H);
+ if(!g){requestAnimationFrame(draw);return}
+ x.fillStyle='#120a30';x.fillRect(bx-5,by-5,B+10,B+10);
+ for(let r=0;r<8;r++)for(let c=0;c<8;c++){if(g[r][c])cell(bx+c*cs,by+r*cs,cs,COL[g[r][c]-1]);else{x.fillStyle='#2a1a5e';x.fillRect(bx+c*cs+1,by+r*cs+1,cs-2,cs-2)}}
+ if(drag){const s=pos();if(fits(s.p.m,s.gx,s.gy))piece(s.p,bx+s.gx*cs,by+s.gy*cs,cs,.35)}
+ const ts=cs*.55;
+ tray.forEach((p,i)=>{if(!p||(drag&&drag.i===i))return;const w=p.m[0].length*ts,h=p.m.length*ts;piece(p,(i+.5)*W/3-w/2,slotY()-h/2,ts)});
+ if(drag){const s=pos();piece(s.p,s.ox,s.oy,cs)}
+ x.fillStyle='#fff';x.font='bold '+W*.06+'px system-ui';x.textAlign='left';x.fillText(score,W*.04,H*.08);
+ x.fillStyle='#ffd23f';x.textAlign='right';x.fillText('★ '+best,W-W*.04,H*.08);
+ if(combo>1){x.fillStyle='#ff5fa2';x.textAlign='center';x.fillText('Combo x'+combo,W/2,H*.115)}
+ requestAnimationFrame(draw)}
+requestAnimationFrame(draw);
+</script></body></html>
